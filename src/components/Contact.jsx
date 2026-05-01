@@ -15,17 +15,11 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
       setFormData({ name: '', email: '', message: '' });
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 5000);
+      setTimeout(() => setSubmitted(false), 5000);
     }, 1500);
   };
 
@@ -41,8 +35,8 @@ const Contact = () => {
         <h2 className="text-blue-500 font-semibold tracking-wide uppercase text-sm mb-2">What's Next?</h2>
         <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">Get In Touch</h3>
         <p className="text-slate-400 max-w-2xl mx-auto text-lg">
-          Although I'm not currently looking for any new opportunities, my inbox is always open. 
-          Whether you have a question or just want to say hi, I'll try my best to get back to you!
+          I'm currently open to new opportunities — whether it's a full-time role, internship, or collaboration.
+          Feel free to reach out and I'll get back to you as soon as possible!
         </p>
       </motion.div>
 
@@ -56,7 +50,7 @@ const Contact = () => {
         >
           <div className="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 shadow-lg h-full">
             <h4 className="text-2xl font-bold text-white mb-8">Contact Information</h4>
-            
+
             <div className="space-y-6">
               <div className="flex items-start">
                 <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/10 text-blue-500 mr-4 shrink-0">
@@ -64,12 +58,15 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-slate-400 mb-1">Email</p>
-                  <a href="mailto:hello@example.com" className="text-lg font-medium text-slate-200 hover:text-blue-400 transition-colors">
-                    hello@example.com
+                  <a
+                    href="mailto:2300030772cseird@gmail.com"
+                    className="text-lg font-medium text-slate-200 hover:text-blue-400 transition-colors break-all"
+                  >
+                    2300030772cseird@gmail.com
                   </a>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/10 text-blue-500 mr-4 shrink-0">
                   <MapPin size={24} />
@@ -77,7 +74,7 @@ const Contact = () => {
                 <div>
                   <p className="text-sm text-slate-400 mb-1">Location</p>
                   <p className="text-lg font-medium text-slate-200">
-                    San Francisco, CA
+                    Vijayawada, Andhra Pradesh, India
                   </p>
                 </div>
               </div>
@@ -86,13 +83,26 @@ const Contact = () => {
             <div className="mt-12 pt-8 border-t border-slate-700">
               <p className="text-sm text-slate-400 mb-4">Connect with me</p>
               <div className="flex space-x-4">
-                <a href="#" className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-700 text-slate-300 hover:bg-blue-600 hover:text-white transition-all transform hover:-translate-y-1">
+                <a
+                  href="https://github.com/11ranjitreddy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-700 text-slate-300 hover:bg-blue-600 hover:text-white transition-all transform hover:-translate-y-1"
+                >
                   <FaGithub size={20} />
                 </a>
-                <a href="#" className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-700 text-slate-300 hover:bg-blue-600 hover:text-white transition-all transform hover:-translate-y-1">
+                <a
+                  href="https://linkedin.com/in/kalliranjit"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-700 text-slate-300 hover:bg-blue-600 hover:text-white transition-all transform hover:-translate-y-1"
+                >
                   <FaLinkedin size={20} />
                 </a>
-                <a href="mailto:hello@example.com" className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-700 text-slate-300 hover:bg-blue-600 hover:text-white transition-all transform hover:-translate-y-1">
+                <a
+                  href="mailto:2300030772cseird@gmail.com"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-700 text-slate-300 hover:bg-blue-600 hover:text-white transition-all transform hover:-translate-y-1"
+                >
                   <Mail size={20} />
                 </a>
               </div>
@@ -122,7 +132,7 @@ const Contact = () => {
                   placeholder="John Doe"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">Email</label>
                 <input
@@ -136,7 +146,7 @@ const Contact = () => {
                   placeholder="john@example.com"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">Message</label>
                 <textarea
@@ -171,7 +181,7 @@ const Contact = () => {
                   animate={{ opacity: 1, y: 0 }}
                   className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg text-green-400 text-sm text-center"
                 >
-                  Thank you! Your message has been sent successfully.
+                  Thank you! I'll get back to you soon.
                 </motion.div>
               )}
             </div>
