@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import SectionHeading from './SectionHeading';
-import { User } from 'lucide-react';
+import { Award, Code, Cloud, Users, ExternalLink } from 'lucide-react';
+// Import your image - THIS IS THE KEY LINE
+import profileImage from '../assets/images/profile.jpg.png';
 
 const About = () => {
   return (
@@ -9,59 +10,88 @@ const About = () => {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true }}
         transition={{ duration: 0.6 }}
+        className="text-center mb-12"
       >
-        <SectionHeading>About Me</SectionHeading>
-
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-start">
-          <div className="md:col-span-3 space-y-6 text-slate-400 text-lg leading-relaxed">
-            <p>
-              Hey! I'm <span className="text-slate-200 font-medium">Kalli Ranjit</span>, a third-year Computer Science undergraduate at{' '}
-              <span className="text-blue-400 font-medium">KL University</span> with a CGPA of 9.56/10.
-              I enjoy building things that solve real problems — from full-stack web platforms to cloud-deployed microservices.
-            </p>
-            <p>
-              I'm an <span className="text-blue-400 font-medium">AWS Certified Cloud Practitioner</span> with 3 end-to-end projects
-              shipped on AWS using Docker, Kubernetes, and Jenkins CI/CD. My primary stack is{' '}
-              <span className="text-slate-200 font-medium">Java + Spring Boot</span> on the backend and{' '}
-              <span className="text-slate-200 font-medium">React.js</span> on the frontend.
-              I've also delivered a real client project — an EdTech LMS — from design to handoff.
-            </p>
-            <p>
-              I'm actively solving DSA problems (130+ on LeetCode) and looking for a{' '}
-              <span className="text-slate-200 font-medium">Full Stack / Backend Engineering role</span> where I can make real impact from day one.
-            </p>
-
-            <p className="text-slate-300 font-medium">Technologies I work with:</p>
-
-            <ul className="grid grid-cols-2 gap-2 text-sm font-medium mt-4">
-              {[
-                'Java & Spring Boot',
-                'React.js',
-                'Microservices & REST APIs',
-                'AWS (EC2, S3, Rekognition...)',
-                'Docker & Kubernetes',
-                'Jenkins CI/CD',
-                'RabbitMQ & WebSocket',
-                'MySQL & JWT',
-              ].map((skill, i) => (
-                <li key={i} className="flex items-center gap-2 text-slate-300">
-                  <span className="text-blue-500 text-xs">▹</span> {skill}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="md:col-span-2 relative group w-full max-w-sm mx-auto">
-            <div className="relative rounded-xl overflow-hidden bg-slate-800 aspect-square flex items-center justify-center border-2 border-slate-700 group-hover:border-blue-500 transition-colors duration-300 z-10">
-              <User size={80} className="text-slate-500 group-hover:text-blue-400 transition-colors duration-300" />
-              <div className="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-            <div className="absolute inset-0 border-2 border-blue-500 rounded-xl translate-x-5 translate-y-5 -z-10 group-hover:translate-x-3 group-hover:translate-y-3 transition-transform duration-300" />
-          </div>
-        </div>
+        <h2 className="text-blue-500 font-semibold tracking-wide uppercase text-sm mb-2">About Me</h2>
+        <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">Who Am I?</h3>
       </motion.div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Image Section - YOUR PHOTO WILL SHOW HERE */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="relative group"
+        >
+          <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          
+          <div className="relative z-10">
+            <div className="relative w-full max-w-md mx-auto">
+              <div className="absolute -top-4 -left-4 w-full h-full border-2 border-blue-500/30 rounded-2xl" />
+              
+              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 p-1">
+                <img
+                  src={profileImage}
+                  alt="Kalli Ranjit"
+                  className="w-full h-auto rounded-2xl object-cover transform transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl" />
+              <div className="absolute -top-6 -right-6 w-24 h-24 bg-purple-500/20 rounded-full blur-2xl" />
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Content Section */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="space-y-6"
+        >
+          <h4 className="text-2xl font-bold text-white">
+            I'm <span className="text-blue-500">Kalli Ranjit</span>
+          </h4>
+          
+          <p className="text-slate-400 leading-relaxed">
+            A passionate <span className="text-blue-400">Full Stack Developer</span> and 
+            <span className="text-blue-400"> Cloud Engineer</span> currently in my third year of 
+            Computer Science Engineering at KL University, with a CGPA of <span className="text-blue-400">9.56/10</span>.
+          </p>
+          
+          <p className="text-slate-400 leading-relaxed">
+            I specialize in building production-grade full-stack systems using 
+            <span className="text-blue-400"> Java, Spring Boot Microservices, and React.js</span>. 
+            As an <span className="text-blue-400">AWS Certified Cloud Practitioner</span>, I've successfully 
+            delivered 3 end-to-end client projects on AWS using Docker, Kubernetes, and Jenkins CI/CD.
+          </p>
+          
+          <div className="grid grid-cols-2 gap-4 pt-4">
+            <div className="bg-slate-800/50 p-4 rounded-xl border border-slate-700 hover:border-blue-500/50 transition-all">
+              <div className="text-2xl font-bold text-blue-500">3+</div>
+              <div className="text-sm text-slate-400">Client Projects</div>
+            </div>
+            <div className="bg-slate-800/50 p-4 rounded-xl border border-slate-700 hover:border-blue-500/50 transition-all">
+              <div className="text-2xl font-bold text-blue-500">130+</div>
+              <div className="text-sm text-slate-400">LeetCode Problems</div>
+            </div>
+            <div className="bg-slate-800/50 p-4 rounded-xl border border-slate-700 hover:border-blue-500/50 transition-all">
+              <div className="text-2xl font-bold text-blue-500">9.56</div>
+              <div className="text-sm text-slate-400">CGPA</div>
+            </div>
+            <div className="bg-slate-800/50 p-4 rounded-xl border border-slate-700 hover:border-blue-500/50 transition-all">
+              <div className="text-2xl font-bold text-blue-500">AWS</div>
+              <div className="text-sm text-slate-400">Certified</div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 };

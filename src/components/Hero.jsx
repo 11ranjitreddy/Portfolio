@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Mail } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Hero = () => {
   return (
@@ -15,9 +16,9 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-blue-400 font-semibold tracking-wide uppercase text-sm md:text-base mb-4">
-            Hi, my name is
-          </h2>
+          <div className="inline-block px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full mb-4">
+            <span className="text-blue-400 text-sm font-medium">🚀 Open to Work</span>
+          </div>
         </motion.div>
 
         <motion.div
@@ -26,7 +27,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-4 tracking-tight">
-            Your Name.
+            Kalli <span className="text-blue-500">Ranjit</span>
           </h1>
         </motion.div>
 
@@ -35,8 +36,8 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold text-slate-400 mb-6 tracking-tight">
-            Software Developer.
+          <h2 className="text-3xl md:text-5xl font-bold text-slate-400 mb-6 tracking-tight">
+            Full Stack <span className="text-blue-400">Developer</span> & Cloud Engineer
           </h2>
         </motion.div>
 
@@ -46,17 +47,18 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-            I build exceptional and accessible digital experiences for the web.
-            Passionate about crafting elegant solutions to complex problems and creating
-            interfaces that wow the user.
+            Third-year CSE undergraduate at KL University (CGPA: 9.56/10) with hands-on experience building and deploying
+            production-grade full-stack systems using <span className="text-blue-400">Java, Spring Boot Microservices, and React.js</span>.
+            AWS Certified Cloud Practitioner with 3 end-to-end projects shipped on AWS.
           </p>
         </motion.div>
 
+        {/* Centered Buttons - View My Work & Message */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
         >
           <a
             href="#projects"
@@ -66,9 +68,40 @@ const Hero = () => {
           </a>
           <a
             href="#contact"
-            className="flex items-center gap-2 bg-transparent border-2 border-slate-700 hover:border-blue-500 text-slate-300 hover:text-white px-8 py-4 rounded-full font-medium transition-all duration-300"
+            className="flex items-center gap-2 bg-transparent border-2 border-slate-700 hover:border-blue-500 text-slate-300 hover:text-white px-8 py-4 rounded-full font-medium transition-all duration-300 transform hover:-translate-y-1"
           >
-            Contact Me <Mail size={18} />
+            Message <Mail size={18} />
+          </a>
+        </motion.div>
+
+        {/* Social Links */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.45 }}
+          className="flex justify-center gap-4"
+        >
+          <a
+            href="https://github.com/11ranjitreddy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 rounded-full bg-slate-800 hover:bg-blue-600 text-slate-300 hover:text-white transition-all transform hover:-translate-y-1"
+          >
+            <FaGithub size={20} />
+          </a>
+          <a
+            href="https://linkedin.com/in/kalliranjit"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 rounded-full bg-slate-800 hover:bg-blue-600 text-slate-300 hover:text-white transition-all transform hover:-translate-y-1"
+          >
+            <FaLinkedin size={20} />
+          </a>
+          <a
+            href="mailto:2300030772cseird@gmail.com"
+            className="p-3 rounded-full bg-slate-800 hover:bg-blue-600 text-slate-300 hover:text-white transition-all transform hover:-translate-y-1"
+          >
+            <Mail size={20} />
           </a>
         </motion.div>
       </div>
