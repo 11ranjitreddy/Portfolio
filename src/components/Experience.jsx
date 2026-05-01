@@ -6,26 +6,18 @@ import { Briefcase, GraduationCap, Calendar } from 'lucide-react';
 const experienceData = [
   {
     type: 'work',
-    title: 'Software Engineer',
-    company: 'Tech Solutions Inc.',
-    date: '2021 - Present',
-    description: 'Developed and maintained responsive web applications using React and Node.js. Collaborated with cross-functional teams to deliver high-quality software on schedule.',
-    icon: <Briefcase size={20} className="text-blue-500" />
-  },
-  {
-    type: 'work',
-    title: 'Frontend Web Developer Intern',
-    company: 'Creative Agency',
-    date: '2020 - 2021',
-    description: 'Assisted in building UI components using HTML, CSS, and JavaScript. Improved site performance and accessibility scores across multiple client projects.',
+    title: 'Cloud Intern',
+    company: 'Your Company Name',
+    date: '2024 - Present',
+    description: 'Gained hands-on experience in cloud infrastructure and DevOps practices. Worked with monitoring tools including Prometheus and Grafana to track system health, set up alerting pipelines, and visualize metrics dashboards. Assisted in managing cloud resources and ensuring uptime across environments.',
     icon: <Briefcase size={20} className="text-blue-500" />
   },
   {
     type: 'education',
     title: 'Bachelor of Science in Computer Science',
     company: 'University of Technology',
-    date: '2016 - 2020',
-    description: 'Relevant Coursework: Data Structures, Algorithms, Web Development, Database Systems, Software Engineering.',
+    date: '2020 - 2024',
+    description: 'Relevant Coursework: Data Structures, Algorithms, Cloud Computing, Operating Systems, Database Systems, Software Engineering.',
     icon: <GraduationCap size={20} className="text-purple-500" />
   }
 ];
