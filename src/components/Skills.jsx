@@ -1,0 +1,67 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import SectionHeading from './SectionHeading';
+
+const skillsData = [
+  { category: "Frontend", items: ["React", "JavaScript", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "Next.js", "Redux"] },
+  { category: "Backend", items: ["Node.js", "Express", "Python", "Django", "REST APIs", "GraphQL"] },
+  { category: "Database & Tools", items: ["MongoDB", "PostgreSQL", "Git", "GitHub", "Docker", "AWS", "Figma"] }
+];
+
+const Skills = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 }
+  };
+
+  return (
+    <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+      >
+        <SectionHeading>Technical Skills</SectionHeading>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {skillsData.map((skillGroup, idx) => (
+            <div key={idx} className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-blue-500/30 transition-colors">
+              <h3 className="text-xl font-bold text-white mb-6 text-center">{skillGroup.category}</h3>
+              
+              <motion.div 
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="flex flex-wrap gap-3 justify-center"
+              >
+                {skillGroup.items.map((skill, i) => (
+                  <motion.div
+                    key={i}
+                    variants={itemVariants}
+                    className="bg-slate-900 px-4 py-2 rounded-full text-sm font-medium text-slate-300 border border-slate-700 hover:border-blue-500 hover:text-blue-400 transition-all cursor-default"
+                  >
+                    {skill}
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+    </section>
+  );
+};
+
+export default Skills;
