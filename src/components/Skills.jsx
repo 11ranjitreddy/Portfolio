@@ -3,9 +3,22 @@ import { motion } from 'framer-motion';
 import SectionHeading from './SectionHeading';
 
 const skillsData = [
-  { category: "Frontend", items: ["React", "JavaScript", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "Next.js", "Redux"] },
-  { category: "Backend", items: ["Node.js", "Express", "Python", "Django", "REST APIs", "GraphQL"] },
-  { category: "Database & Tools", items: ["MongoDB", "PostgreSQL", "Git", "GitHub", "Docker", "AWS", "Figma"] }
+  {
+    category: "Languages & Frontend",
+    items: ["Java", "JavaScript", "C", "SQL", "React.js", "Flutter", "HTML5", "CSS3"]
+  },
+  {
+    category: "Backend & Architecture",
+    items: ["Spring Boot", "Microservices", "Spring Cloud", "REST APIs", "Node.js", "RabbitMQ", "WebSocket", "JWT", "BCrypt"]
+  },
+  {
+    category: "DevOps & Cloud",
+    items: ["AWS EC2", "AWS S3", "AWS Rekognition", "AWS Transcribe", "AWS Comprehend", "AWS SES", "AWS Kinesis", "Docker", "Kubernetes", "Jenkins CI/CD", "Ansible"]
+  },
+  {
+    category: "Databases & Other Tools",
+    items: ["MySQL", "Git", "GitHub", "Razorpay API", "Twilio", "Vercel"]
+  }
 ];
 
 const Skills = () => {
@@ -13,9 +26,7 @@ const Skills = () => {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
+      transition: { staggerChildren: 0.1 }
     }
   };
 
@@ -34,12 +45,17 @@ const Skills = () => {
       >
         <SectionHeading>Technical Skills</SectionHeading>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skillsData.map((skillGroup, idx) => (
-            <div key={idx} className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-blue-500/30 transition-colors">
-              <h3 className="text-xl font-bold text-white mb-6 text-center">{skillGroup.category}</h3>
-              
-              <motion.div 
+            <div
+              key={idx}
+              className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700/50 hover:border-blue-500/30 transition-colors"
+            >
+              <h3 className="text-xl font-bold text-white mb-6 text-center">
+                {skillGroup.category}
+              </h3>
+
+              <motion.div
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="show"
